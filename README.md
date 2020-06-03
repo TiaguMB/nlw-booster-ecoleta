@@ -9,6 +9,9 @@ Ecoleta é um site onde ajudamos pessoas a encontrarem pontos de coleta de sua c
 - [ ] Quinta
 - [ ] Sexta
 
+## Design
+Link para o design feito no Figma: [Clique aqui](https://www.figma.com/file/1SxgOMojOB2zYT0Mdk28lB/Ecoleta)
+
 ---
 
 Feito com :heartbeat:
