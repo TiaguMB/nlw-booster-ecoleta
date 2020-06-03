@@ -4,7 +4,7 @@ Ecoleta é um site onde ajudamos pessoas a encontrarem pontos de coleta de sua c
 
 ## Dias da semana
 - [x] Segunda
-- [ ] Terça
+- [x] Terça
 - [ ] Quarta
 - [ ] Quinta
 - [ ] Sexta
