@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
-import { FiArrowLeft } from 'react-icons/fi';
-import { Map, TileLayer, Marker } from 'react-leaflet';
-import api from '../../services/api';
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { FiArrowLeft } from "react-icons/fi";
+import { Map, TileLayer, Marker } from "react-leaflet";
+import api from "../../services/api";
 
-import './styles.css';
+import "./styles.css";
 
-import logo from '../../assets/logo.svg';
+import logo from "../../assets/logo.svg";
 
 // array ou objeto: manualmente informar o tipo da variável
 
@@ -18,26 +18,28 @@ interface Item {
 
 const CreatePoint = () => {
   const [items, setItems] = useState<Item[]>([]);
-  
+
   useEffect(() => {
-    api.get('items').then(response => {
+    api.get("items").then((response) => {
       setItems(response.data);
     });
   }, []);
-  
+
   return (
     <div id="page-create-point">
       <header>
-        <img src={logo} alt="Ecoleta"/>
+        <img src={logo} alt="Ecoleta" />
 
-        <Link to="/" >
+        <Link to="/">
           <FiArrowLeft />
           Voltar para home
         </Link>
       </header>
 
       <form>
-        <h1>Cadastro do <br/> ponto de coleta</h1>
+        <h1>
+          Cadastro do <br /> ponto de coleta
+        </h1>
 
         <fieldset>
           <legend>
@@ -46,32 +48,19 @@ const CreatePoint = () => {
 
           <div className="field">
             <label htmlFor="name">Nome da entidade</label>
-            <input 
-              type="text"
-              name="name"
-              id="name"
-            />
+            <input type="text" name="name" id="name" />
           </div>
-          
+
           <div className="field-group">
             <div className="field">
               <label htmlFor="email">E-mail</label>
-              <input 
-                type="email"
-                name="email"
-                id="email"
-              />
+              <input type="email" name="email" id="email" />
             </div>
 
             <div className="field">
               <label htmlFor="whatsapp">WhatsApp</label>
-              <input 
-                type="text"
-                name="whatsapp"
-                id="whatsapp"
-              />
+              <input type="text" name="whatsapp" id="whatsapp" />
             </div>
-
           </div>
         </fieldset>
 
@@ -112,21 +101,18 @@ const CreatePoint = () => {
           </legend>
 
           <ul className="items-grid">
-            {items.map(item => (
+            {items.map((item) => (
               <li key={item.id}>
-                <img src={item.image_url} alt={item.title}/>
+                <img src={item.image_url} alt={item.title} />
                 <span>{item.title}</span>
               </li>
             ))}
-            
           </ul>
         </fieldset>
-        <button type="submit">
-          Cadastrar ponto de coleta
-        </button>
+        <button type="submit">Cadastrar ponto de coleta</button>
       </form>
     </div>
-  )
+  );
 };
 
 export default CreatePoint;
